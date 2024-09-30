@@ -18,7 +18,7 @@ def create_guard_rules_registry_all_rules(dirName, version):
     controls = ["all rules in AWS Guard Rules Registry"]
     mappings = []
     resource_list = download_resource_type_list()
-    for build_file in glob.iglob(aws_rules_directory, recursive=True):
+    for build_file in sorted(glob.iglob(aws_rules_directory, recursive=True)):
       reports_on = []
       build_file_relative_path = os.path.relpath(build_file)
       for resource in resource_list:
